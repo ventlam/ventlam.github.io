@@ -31,7 +31,11 @@ i18n_dir: :lang
 skip_render:
 
 #Banner_img on loading
-banner_img: /img/head-image-20231225.jpeg
+banner_img: https://s.alidraft.com/vent/journal.jpg
+
+#banner_img: /img/bg/example.jpg   # 对应存放在 /source/img/bg/example.jpg
+
+
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
