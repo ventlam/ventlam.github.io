@@ -31,7 +31,7 @@ i18n_dir: :lang
 skip_render:
 
 #Banner_img on loading
-banner_img: https://s.alidraft.com/vent/blog-head-20231225.jpeg
+banner_img: /img/head-image-20231225.jpeg
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
