@@ -528,7 +528,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: /img/beach.png
+  banner_img: https://s.alidraft.com/vent/beach.png
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -891,7 +891,7 @@ discuss:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/moutain.png
+  banner_img: https://s.alidraft.com/vent/moutain.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -902,7 +902,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/ocean.png
+  banner_img: https://s.alidraft.com/vent/ocean.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -948,7 +948,7 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/noon.png
+  banner_img: https://s.alidraft.com/vent/noon.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
   avatar: /img/avatar.png
