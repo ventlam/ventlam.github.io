@@ -1,0 +1,758 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Vent Lam">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1. Pinecone简介Pinecone是一个简单的云原生向量数据库，为高性能的AI应用提供长期记忆。它适用于涉及大模型(LLM)、生成式人工智能(AIGC)和语义搜索(Sematic Search)的应用。使用Pinecone，可以轻松存储和查询Vector ，提供优化的性能和实时分析能力。 1.1 与Mysql对比   特性&#x2F;数据库 Pinecone MySQL    数据类型 向">
+<meta property="og:type" content="article">
+<meta property="og:title" content="向量数据库入门教程系列-1-基于pinecone实现语义搜索">
+<meta property="og:url" content="http://example.com/2023/12/18/Vector%20Database%20Tutorial%20Series%20-%201%20-%20Implementing%20Semantic%20Search%20with%20Pinecone/index.html">
+<meta property="og:site_name" content="The way to freedom">
+<meta property="og:description" content="1. Pinecone简介Pinecone是一个简单的云原生向量数据库，为高性能的AI应用提供长期记忆。它适用于涉及大模型(LLM)、生成式人工智能(AIGC)和语义搜索(Sematic Search)的应用。使用Pinecone，可以轻松存储和查询Vector ，提供优化的性能和实时分析能力。 1.1 与Mysql对比   特性&#x2F;数据库 Pinecone MySQL    数据类型 向">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230817141430.png">
+<meta property="og:image" content="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230820085241.png">
+<meta property="og:image" content="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230819230858.png">
+<meta property="og:image" content="https://s.zhangguiyi.cn/vent/pinecone_record.png">
+<meta property="og:image" content="https://s.zhangguiyi.cn/vent/20230820100515.png">
+<meta property="og:image" content="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230819224843.png">
+<meta property="og:image" content="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230819225008.png">
+<meta property="og:image" content="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230819225744.png">
+<meta property="og:image" content="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230819230358.png">
+<meta property="og:image" content="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230819230312.png">
+<meta property="article:published_time" content="2023-12-18T02:00:51.034Z">
+<meta property="article:modified_time" content="2023-12-25T04:29:06.558Z">
+<meta property="article:author" content="Vent Lam">
+<meta property="article:tag" content="vector databases">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230817141430.png">
+  
+  
+  
+  <title>向量数据库入门教程系列-1-基于pinecone实现语义搜索 - The way to freedom</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="The way to freedom" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>The Way To Freedom</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/journal.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="向量数据库入门教程系列-1-基于pinecone实现语义搜索"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-12-18 10:00" pubdate>
+          December 18, 2023 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.8k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          16 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">向量数据库入门教程系列-1-基于pinecone实现语义搜索</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="1-Pinecone简介"><a href="#1-Pinecone简介" class="headerlink" title="1. Pinecone简介"></a>1. Pinecone简介</h1><p>Pinecone是一个<strong>简单的云原生向量数据库</strong>，为高性能的AI应用提供长期记忆。它适用于涉及大模型(LLM)、生成式人工智能(AIGC)和语义搜索(Sematic Search)的应用。使用Pinecone，可以轻松存储和查询Vector ，提供优化的性能和实时分析能力。</p>
+<h2 id="1-1-与Mysql对比"><a href="#1-1-与Mysql对比" class="headerlink" title="1.1 与Mysql对比"></a>1.1 与Mysql对比</h2><table>
+<thead>
+<tr>
+<th>特性&#x2F;数据库</th>
+<th>Pinecone</th>
+<th>MySQL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>数据类型</strong></td>
+<td>向量数据</td>
+<td>结构化数据（如文本、数字、日期等）</td>
+</tr>
+<tr>
+<td><strong>数据结构</strong></td>
+<td>无模式，数据以高维向量形式存储</td>
+<td>表格结构，数据以行和列的形式组织</td>
+</tr>
+<tr>
+<td><strong>索引</strong></td>
+<td>为高维向量优化的索引</td>
+<td>B树、哈希索引等</td>
+</tr>
+<tr>
+<td><strong>存储方式</strong></td>
+<td>分布式存储，云原生</td>
+<td>可以是本地存储或分布式存储（如MySQL Cluster）</td>
+</tr>
+<tr>
+<td><strong>查询复杂性</strong></td>
+<td>主要用于相似性搜索</td>
+<td>支持复杂的SQL查询，如连接、子查询等</td>
+</tr>
+<tr>
+<td><strong>数据模型</strong></td>
+<td>无模式</td>
+<td>有模式，需要预先定义表、列和关系</td>
+</tr>
+</tbody></table>
+<h2 id="1-2-Pinecone特点"><a href="#1-2-Pinecone特点" class="headerlink" title="1.2 Pinecone特点"></a>1.2 Pinecone特点</h2><ol>
+<li><p>速度快:Pinecone利用了突破性的新算法,可以实现毫秒级的向量搜索,是传统搜索方法的100-1000倍速度。这使得它非常适合需要实时响应的应用。</p>
+</li>
+<li><p>易于集成:Pinecone提供了多种语言的客户端库,包括Python、Java、Go等,可以非常容易地在应用中集成Pinecone。并且支持主流机器学习框架,如TensorFlow、PyTorch等。</p>
+</li>
+<li><p>灵活可扩展:Pinecone使用了可水平扩展的分布式架构,可以根据需求轻松扩展搜索能力。并且提供了细粒度的可调参数,可以针对不同的应用场景进行优化。</p>
+</li>
+<li><p>可管理的SaaS:Pinecone提供了云托管的SaaS版本,开发者可以通过简单的WEB界面来管理索引和查询,无需自行部署和维护服务。</p>
+</li>
+</ol>
+<h1 id="2-初识Pinecone"><a href="#2-初识Pinecone" class="headerlink" title="2. 初识Pinecone"></a>2. 初识Pinecone</h1><p>如前文所说，Pinecone是云原生的应用，它直接登陆网页就能使用。借助传统数据库的概念，我们来快速了解一下Pinecone的数据结构。</p>
+<ul>
+<li><strong>Pod</strong>：它是一个运行Pinecone服务的预配置硬件单元，你可以理解成一个运行Docker上的数据库实例。</li>
+<li><strong>Index</strong>：可以理解成传统关系数据库的表（Table)。每个Index在Pinecone中都是一个独立的数据结构，用于存储和检索高维向量。每个索引都有其自己的数据集和相关的配置。查询和操作是针对特定Index进行的。</li>
+<li><strong>Record</strong>: 可以理解成传统关系数据库的行(Row)。每个记录都有一个唯一的ID或键。</li>
+</ul>
+<p><strong>接下来进入实战：</strong></p>
+<h2 id="2-1-数据库创建"><a href="#2-1-数据库创建" class="headerlink" title="2.1 数据库创建"></a>2.1 数据库创建</h2><p>构建Pinecone数据库是极其简单的，只需要在网页上点击几下，填写一些必要的参数即可。</p>
+<h3 id="2-1-1-登陆注册"><a href="#2-1-1-登陆注册" class="headerlink" title="2.1.1 登陆注册"></a>2.1.1 登陆注册</h3><p><a target="_blank" rel="noopener" href="https://app.pinecone.io/organizations">直接访问链接</a></p>
+<p><img src="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230817141430.png" srcset="/img/loading.gif" lazyload alt="Pasted image 20230817141430"></p>
+<h3 id="2-1-2-容器类型和索引-Pod-Type-Index"><a href="#2-1-2-容器类型和索引-Pod-Type-Index" class="headerlink" title="2.1.2 容器类型和索引(Pod Type&amp; Index )"></a>2.1.2 容器类型和索引(Pod Type&amp; Index )</h3><p>创建一个index，最核心的参数是维数，这个很多时候取决于你的数据大小。Pod Type如前文所言，服务实例的大小，我们免费用户只能选择starter这个机型。<br><img src="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230820085241.png" srcset="/img/loading.gif" lazyload alt="Pasted image 20230820085241"></p>
+<p>可以看到我们创建了一个名字为test101的index，维度为384维。注意一开始这个vectors应该是零。<br><img src="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230819230858.png" srcset="/img/loading.gif" lazyload alt="Pasted image 20230819230858"><br>后续我们通过客户端向数据库上传了80000个vector到这个index。</p>
+<h3 id="2-1-3-记录-record"><a href="#2-1-3-记录-record" class="headerlink" title="2.1.3 记录(record)"></a>2.1.3 记录(record)</h3><p>Pinecone索引中的每个记录record包含一个唯一的ID和一个表示密集向量嵌入的浮点数数组，可以看到数据结构实际上这样。</p>
+<p><img src="https://s.zhangguiyi.cn/vent/pinecone_record.png" srcset="/img/loading.gif" lazyload></p>
+<p>Pinecone基本上是以JSON格式来对数据库做CURD，我们来看看一个最简单Record例子：<br><img src="https://s.zhangguiyi.cn/vent/20230820100515.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>这个Record由4个字段组成，分别是RecordID，可以理解为RowId，唯一标识符。Dense Vector和Sparse Vector都是指我们数据的向量表达方式。MetaData就是元数据。</p>
+<h1 id="3-基于Pinecone实现语义搜索"><a href="#3-基于Pinecone实现语义搜索" class="headerlink" title="3 基于Pinecone实现语义搜索"></a>3 基于Pinecone实现语义搜索</h1><ul>
+<li><strong>安装依赖包</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">!pip install -qU \<br><span class="hljs-string">&quot;pinecone-client[grpc]&quot;</span>==<span class="hljs-number">2.2</span><span class="hljs-number">.1</span> \<br>pinecone-datasets==<span class="hljs-string">&#x27;0.5.0rc11&#x27;</span> \<br>sentence-transformers==<span class="hljs-number">2.2</span><span class="hljs-number">.2</span><br></code></pre></td></tr></table></figure>
+
+<p>我们跳过数据准备步骤，因为它们非常耗时，直接使用<em>Pinecone Datasets</em>中的预建数据集来进行操作。这次教程中使用的是quora_all-MiniLM-L6-bm25，主要是美国知乎的提问问题。</p>
+<ul>
+<li>*<strong>下载数据集</strong></li>
+</ul>
+<p>Starter这个pod支持写入10万条vector，我们选择8万条数据写入。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> pinecone_datasets <span class="hljs-keyword">import</span> load_dataset<br><br>dataset = load_dataset(<span class="hljs-string">&#x27;quora_all-MiniLM-L6-bm25&#x27;</span>)<br><span class="hljs-comment"># 删掉这次教程无关的字段</span><br>dataset.documents.drop([<span class="hljs-string">&#x27;metadata&#x27;</span>], axis=<span class="hljs-number">1</span>, inplace=<span class="hljs-literal">True</span>)<br>dataset.documents.rename(columns=&#123;<span class="hljs-string">&#x27;blob&#x27;</span>: <span class="hljs-string">&#x27;metadata&#x27;</span>&#125;, inplace=<span class="hljs-literal">True</span>)<br><span class="hljs-comment">#留下8万条记录</span><br>dataset.documents.drop(dataset.documents.index[<span class="hljs-number">320_000</span>:], inplace=<span class="hljs-literal">True</span>)<br>dataset.documents.drop(dataset.documents.index[:<span class="hljs-number">240_000</span>], inplace=<span class="hljs-literal">True</span>)<br><span class="hljs-comment">#展现10条数据</span><br>dataset.head(n=<span class="hljs-number">10</span>)<br></code></pre></td></tr></table></figure>
+<p>可以看到前10条数据<br><img src="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230819224843.png" srcset="/img/loading.gif" lazyload alt="Pasted image 20230819224843"></p>
+<ul>
+<li><p><strong>配置环境</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> pinecone<br><br><span class="hljs-comment"># 找到你的PINECONE_API_KEY</span><br>PINECONE_API_KEY = os.environ.get(<span class="hljs-string">&#x27;PINECONE_API_KEY&#x27;</span>) <span class="hljs-keyword">or</span> <span class="hljs-string">&#x27;PINECONE_API_KEY&#x27;</span><br><span class="hljs-comment"># 找到你的PINECONE_ENVIRONMENT</span><br>PINECONE_ENV = os.environ.get(<span class="hljs-string">&#x27;PINECONE_ENVIRONMENT&#x27;</span>) <span class="hljs-keyword">or</span> <span class="hljs-string">&#x27;PINECONE_ENVIRONMENT&#x27;</span><br><br>pinecone.init(<br>api_key=PINECONE_API_KEY,<br>environment=PINECONE_ENV<br>)<br></code></pre></td></tr></table></figure>
+<p>如下图所示：第一个红色圆圈为PINECONE_ENVIRONMENT的参数取值。第二个圆圈为PINECONE_API_KEY的参数取值。复制粘贴到上述代码里面替换成字符串即可。<br><img src="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230819225008.png" srcset="/img/loading.gif" lazyload alt="Pasted image 20230819225008"></p>
+</li>
+<li><p><strong>创建名为test101的index</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">index_name = <span class="hljs-string">&#x27;test101&#x27;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python"><br><span class="hljs-keyword">import</span> time<br><br><span class="hljs-comment"># 只有index不存在的时候，才会新建</span><br><span class="hljs-keyword">if</span> index_name <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> pinecone.list_indexes():<br>pinecone.create_index(<br>name=index_name,<br>dimension=<span class="hljs-built_in">len</span>(dataset.documents.iloc[<span class="hljs-number">0</span>][<span class="hljs-string">&#x27;values&#x27;</span>]),<br><span class="hljs-comment">#余弦相似度</span><br>metric=<span class="hljs-string">&#x27;cosine&#x27;</span><br>)<br><br><span class="hljs-comment"># 等一秒钟(wait for it)</span><br>time.sleep(<span class="hljs-number">1</span>)<br><br><span class="hljs-comment"># 连接index</span><br>index = pinecone.GRPCIndex(index_name)<br></code></pre></td></tr></table></figure>
+
+<p><strong>批量写入数据：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> batch <span class="hljs-keyword">in</span> dataset.iter_documents(batch_size=<span class="hljs-number">100</span>):<br><br>index.upsert(batch)<br></code></pre></td></tr></table></figure>
+<p> 可以看到写入的性能曲线，有个比较陡峭的峰，感觉性能并没有很稳定。另外，数据图表有个小bug，只显示有75000条，和上面的统计信息有所冲突。<br> <img src="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230819225744.png" srcset="/img/loading.gif" lazyload alt="Pasted image 20230819225744"></p>
+<p>Index的数据已经写入，可以开始进行查询了。语义搜索需要将文本转换成向量的形式，也就是我们通常所说的vector embeddings过程。在本教程里，我们采用<a target="_blank" rel="noopener" href="https://www.sbert.net/">SentenceTransformer</a>来实现句子vector embeddings(向量嵌入)。<br>SentenceTransformer是一个功能强大的，可以生成句子、文本和图像的embeddings的python库。它提供了许多已经训练好的模型，用户可以使用这些模型进行文本相关任务，例如文本相似度计算、文本分类等。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sentence_transformers <span class="hljs-keyword">import</span> SentenceTransformer<br><span class="hljs-keyword">import</span> torch<br><span class="hljs-comment">#默认用GPU</span><br>device = <span class="hljs-string">&#x27;cuda&#x27;</span> <span class="hljs-keyword">if</span> torch.cuda.is_available() <span class="hljs-keyword">else</span> <span class="hljs-string">&#x27;cpu&#x27;</span><br><span class="hljs-comment">#展现下模型</span><br>model = SentenceTransformer(<span class="hljs-string">&#x27;all-MiniLM-L6-v2&#x27;</span>, device=device)<br>model<br></code></pre></td></tr></table></figure>
+<p>可以看到模型的一些默认信息：</p>
+<p><img src="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230819230358.png" srcset="/img/loading.gif" lazyload alt="Pasted image 20230819230358"></p>
+<ul>
+<li><strong>查询你的问题向量</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python">query = <span class="hljs-string">&quot;Who was the best Chinese King?&quot;</span><br><br><span class="hljs-comment"># 创建一个查询的向量</span><br>xq = model.encode(query).tolist()<br><br><span class="hljs-comment"># 查询</span><br>xc = index.query(xq, top_k=<span class="hljs-number">5</span>, include_metadata=<span class="hljs-literal">True</span>)<br><br><span class="hljs-comment"># 逐一打印结果</span><br><span class="hljs-keyword">for</span> result <span class="hljs-keyword">in</span> xc[<span class="hljs-string">&#x27;matches&#x27;</span>]:<br>	<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;<span class="hljs-built_in">round</span>(result[<span class="hljs-string">&#x27;score&#x27;</span>], <span class="hljs-number">2</span>)&#125;</span>: <span class="hljs-subst">&#123;result[<span class="hljs-string">&#x27;metadata&#x27;</span>][<span class="hljs-string">&#x27;text&#x27;</span>]&#125;</span>&quot;</span>)<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>结果如下图所示：数字表示相似度，展现了相似度排名前五的问题向量。<br><img src="https://s.zhangguiyi.cn/vent/Pasted%20image%2020230819230312.png" srcset="/img/loading.gif" lazyload alt="Pasted image 20230819230312"></p>
+<h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4. 总结"></a>4. 总结</h1><p>本文深入探讨了Pinecone，一款云原生向量数据库，强调了其与传统数据库如MySQL的差异。Pinecone的核心优势在于其高速、易集成、灵活性和云托管能力。通过实际示例，我们展示了如何使用Pinecone和SentenceTransformer进行语义搜索。在接下来的教程中，风爷将进一步探索如何结合向量数据库和大型模型来实现图片的语义搜索，为大家展示向量数据库更多的实际应用场景。</p>
+<p>#blog #vectordb #ai </p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/AI/" class="category-chain-item">AI</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/vector-databases/" class="print-no-link">#vector databases</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>向量数据库入门教程系列-1-基于pinecone实现语义搜索</div>
+      <div>http://example.com/2023/12/18/Vector Database Tutorial Series - 1 - Implementing Semantic Search with Pinecone/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Vent Lam</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>December 18, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/12/18/Vector%20Database%20Tutorial%20Series%20-%202%20-%20Building%20an%20Image%20Search%20Engine%20with%20Milvus/" title="向量数据库入门教程系列-2-基于milvus实现图片搜索引擎">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">向量数据库入门教程系列-2-基于milvus实现图片搜索引擎</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/12/18/Natural%20Language-Based%20Data%20Analysis%20Tool-E05-Week15%202023/" title="基于自然语言的数据分析神器来了-风爷推荐-E05-Week15 2023">
+                        <span class="hidden-mobile">基于自然语言的数据分析神器来了-风爷推荐-E05-Week15 2023</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
