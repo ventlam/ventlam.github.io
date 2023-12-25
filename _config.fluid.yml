@@ -931,7 +931,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: https://s.draftai.cn/way-night.png
+  banner_img: https://s.draftai.cn/vent/way-night.png
   banner_img_height: 80
   banner_mask_alpha: 0.3
   tagcloud:
