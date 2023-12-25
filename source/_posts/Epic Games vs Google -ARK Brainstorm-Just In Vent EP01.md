@@ -1,6 +1,6 @@
 ---
-title: "Epic Games起诉Google -ARK Brainstorm -枫叶洞见 EP 1"
-categories: Podcasts
+title: "Epic Games起诉Google -ARK Brainstorm -枫叶洞见EP01"
+categories: Tech News
 tags:
     - Epic Games
     - Google
