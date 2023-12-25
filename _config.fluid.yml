@@ -891,7 +891,7 @@ discuss:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/default.png
+  banner_img: /img/moutain.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -902,7 +902,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/ocean.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -995,7 +995,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/noon.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
   # 友链的成员项
