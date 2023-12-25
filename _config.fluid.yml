@@ -948,7 +948,7 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/way-night.png
+  banner_img: /img/noon.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
   avatar: /img/avatar.png
