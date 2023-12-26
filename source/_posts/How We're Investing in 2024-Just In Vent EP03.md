@@ -6,6 +6,7 @@ tags:
     - AMD
     - ARK
     - MSFT
+    - Google
 ---
 
 
