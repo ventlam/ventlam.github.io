@@ -1,5 +1,5 @@
 ---
-title: "2024年我们投资什么以及2023年总结-枫叶洞见EP03"
+title: "2024年我们投资什么-枫叶洞见EP03"
 categories: Investment
 tags:
     - Nvdia
