@@ -1,6 +1,6 @@
 ---
 title: "关于亚马逊和蓝色起源 — 亚马逊创始人Jeff Bezos访谈 - 2023年12月15"
-categories: Tech News
+categories: Investment
 tags:
     - amazon
     - blue origin
