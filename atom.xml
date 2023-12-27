@@ -184,6 +184,30 @@
   </entry>
   
   <entry>
+    <title>风下之乡</title>
+    <link href="http://example.com/2023/12/25/wind/"/>
+    <id>http://example.com/2023/12/25/wind/</id>
+    <published>2023-12-25T03:47:17.841Z</published>
+    <updated>2023-12-25T04:23:32.198Z</updated>
+    
+    <content type="html"><![CDATA[<p>我喜欢婆罗洲那些黑黢黢的夜晚。空气中弥漫着树芽和湿漉漉的树叶的气味，仅有的声音是来自于青蛙的呱噪和夜鹰的咕咕，唯一的陪伴来自我们自己，仅有的只言片语也我们自己的。 我喜欢那些独自在家的安静日子，那些懒散、无所事事、不值一提的日子。只有时间和孤独，才能让人认识到自己的存在。这些，是我们在婆罗洲所拥有的。</p><p>我也喜欢那些丛林中的旅行，认识了那些我一直想要认识的事物— 阴云惨淡，如地狱般的尼泊湿地；模糊暧昧的绿色河流，美丽刺激的险滩；阳光照射下，色泽醇厚的裸露的脊背。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;我喜欢婆罗洲那些黑黢黢的夜晚。空气中弥漫着树芽和湿漉漉的树叶的气味，仅有的声音是来自于青蛙的呱噪和夜鹰的咕咕，唯一的陪伴来自我们自己，仅有的只言片语也我们自己的。 我喜欢那些独自在家的安静日子，那些懒散、无所事事、不值一提的日子。只有时间和孤独，才能让人认识到自己的存在。这</summary>
+      
+    
+    
+    
+    <category term="读书笔记" scheme="http://example.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Non Fiction" scheme="http://example.com/tags/Non-Fiction/"/>
+    
+  </entry>
+  
+  <entry>
     <title>从零开始打造更强的私有GPT大模型- RAG教程01</title>
     <link href="http://example.com/2023/12/25/rag-101/"/>
     <id>http://example.com/2023/12/25/rag-101/</id>
@@ -210,30 +234,6 @@
     <category term="vector embeedings" scheme="http://example.com/tags/vector-embeedings/"/>
     
     <category term="Llama Index" scheme="http://example.com/tags/Llama-Index/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>风下之乡</title>
-    <link href="http://example.com/2023/12/25/wind/"/>
-    <id>http://example.com/2023/12/25/wind/</id>
-    <published>2023-12-25T03:47:17.841Z</published>
-    <updated>2023-12-25T04:23:32.198Z</updated>
-    
-    <content type="html"><![CDATA[<p>我喜欢婆罗洲那些黑黢黢的夜晚。空气中弥漫着树芽和湿漉漉的树叶的气味，仅有的声音是来自于青蛙的呱噪和夜鹰的咕咕，唯一的陪伴来自我们自己，仅有的只言片语也我们自己的。 我喜欢那些独自在家的安静日子，那些懒散、无所事事、不值一提的日子。只有时间和孤独，才能让人认识到自己的存在。这些，是我们在婆罗洲所拥有的。</p><p>我也喜欢那些丛林中的旅行，认识了那些我一直想要认识的事物— 阴云惨淡，如地狱般的尼泊湿地；模糊暧昧的绿色河流，美丽刺激的险滩；阳光照射下，色泽醇厚的裸露的脊背。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;我喜欢婆罗洲那些黑黢黢的夜晚。空气中弥漫着树芽和湿漉漉的树叶的气味，仅有的声音是来自于青蛙的呱噪和夜鹰的咕咕，唯一的陪伴来自我们自己，仅有的只言片语也我们自己的。 我喜欢那些独自在家的安静日子，那些懒散、无所事事、不值一提的日子。只有时间和孤独，才能让人认识到自己的存在。这</summary>
-      
-    
-    
-    
-    <category term="读书笔记" scheme="http://example.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="Non Fiction" scheme="http://example.com/tags/Non-Fiction/"/>
     
   </entry>
   
