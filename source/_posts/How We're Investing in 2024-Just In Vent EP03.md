@@ -1,6 +1,7 @@
 ---
 title: "2024年我们投资什么以及2023年总结-枫叶洞见EP03"
 categories: Investment
+slug: 2023/12/26/How%20We're%20Investing%20in%202024-Just%20In%20Vent%20EP03
 tags:
     - Nvdia
     - AMD
