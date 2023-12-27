@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Hexo固定超链接</title>
+    <link href="/2023/12/27/Hexo%20permalink/"/>
+    <url>/2023/12/27/Hexo%20permalink/</url>
+    
+    <content type="html"><![CDATA[<p>在 Hexo 中，文章的 URL 通常是基于文章的文件名或者 front matter 中的 <code>slug</code> 字段生成的。如果文章 URL 每次修改时都发生变化，可能是因为Hexo 配置文件中设置了根据修改日期生成 URL。要解决这个问题，您可以按照以下步骤操作：</p><h3 id="1-检查-Hexo-配置文件"><a href="#1-检查-Hexo-配置文件" class="headerlink" title="1. 检查 Hexo 配置文件"></a>1. 检查 Hexo 配置文件</h3><p>打开您的 Hexo 站点根目录下的 <code>_config.yml</code> 配置文件，并检查有关 URL 生成的设置。确保 <code>permalink</code> 设置不是基于日期的。通常，您可能会看到类似这样的设置：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">permalink:</span> <span class="hljs-string">:year/:month/:day/:title/</span><br></code></pre></td></tr></table></figure><p>如果您希望 URL 固定不变，可以更改为：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">permalink:</span> <span class="hljs-string">:title/</span><br></code></pre></td></tr></table></figure><p>或者使用 <code>slug</code> 字段：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">permalink:</span> <span class="hljs-string">:slug/</span><br></code></pre></td></tr></table></figure><h3 id="2-使用-Front-Matter-中的-slug-字段"><a href="#2-使用-Front-Matter-中的-slug-字段" class="headerlink" title="2. 使用 Front Matter 中的 slug 字段"></a>2. 使用 Front Matter 中的 <code>slug</code> 字段</h3><p>在您的文章的 front matter 中设置 <code>slug</code> 字段，可以确保 URL 固定且不会因为修改而变化。例如：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown">---<br>title: 我的文章标题<br><span class="hljs-section">slug: my-fixed-url</span><br><span class="hljs-section">---</span><br></code></pre></td></tr></table></figure><p>在这个例子中，无论文章内容如何修改，其 URL 都将保持为 <code>http://your-blog.com/my-fixed-url/</code>。</p><p>在 Hexo 和许多其他博客系统或内容管理系统（CMS）中，<code>slug</code> 字段是用于定义文章或页面的简短、易读的部分 URL。这个字段通常用于生成最终的网页地址（URL），使其更易于理解和记忆。</p><h3 id="Slug-的作用和特点："><a href="#Slug-的作用和特点：" class="headerlink" title="Slug 的作用和特点："></a>Slug 的作用和特点：</h3><ol><li><p><strong>易读性</strong>：Slug 提供了一个比自动生成的数字或日期更易读的方式来标识文章或页面。例如，对于一个标题为 “如何学习编程” 的文章，相应的 slug 可能是 “how-to-learn-programming”。</p></li><li><p><strong>SEO 友好</strong>：一个好的 slug 可以增强页面的搜索引擎优化（SEO），因为它通常包含关键词，这些关键词有助于搜索引擎了解页面的内容。</p></li><li><p><strong>永久链接</strong>：Slug 作为 URL 的一部分，通常被视为一种永久链接。这意味着一旦定义，它就不应该改变，以避免打破指向该页面的链接。</p></li></ol><h3 id="在-Hexo-中使用-Slug："><a href="#在-Hexo-中使用-Slug：" class="headerlink" title="在 Hexo 中使用 Slug："></a>在 Hexo 中使用 Slug：</h3><p>在 Hexo 的 front matter 中，您可以手动为每篇文章指定一个 slug。例如：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">如何学习编程</span><br><span class="hljs-attr">slug:</span> <span class="hljs-string">how-to-learn-programming</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure><p>在这种情况下，即使文章的标题发生变化，通过指定的 slug 生成的 URL（例如 <code>yourdomain.com/how-to-learn-programming</code>）将保持不变。</p><p>如果不指定 slug，Hexo 默认会使用文章标题（通常去除特殊字符和空格）来生成 URL。通过手动设置 slug，您可以获得对 URL 结构的更精确控制。</p><p>如果您在 <code>_config.yml</code> 文件中设置了 <code>permalink</code> 的格式为 <code>:year/:month/:day/:title/</code>，那么在文章的 front matter 中单独设置 <code>slug</code> 字段的确是<strong>不会生效</strong>的，至少不会影响最终生成的 URL。这是因为您的 <code>permalink</code> 配置没有包含 <code>:slug</code> 参数。</p><p>在您的 <code>permalink</code> 配置中，URL 是基于文章的发布年、月、日以及标题来生成的。例如，如果您有一篇标题为 “我的文章”、发布日期为 2023 年 3 月 15 日的文章，那么它的 URL 将会是类似于 <code>http://your-blog-domain.com/2023/03/15/我的文章/</code>。</p><h3 id="如何让-slug-生效："><a href="#如何让-slug-生效：" class="headerlink" title="如何让 slug 生效："></a>如何让 <code>slug</code> 生效：</h3><p>如果您希望通过在文章的 front matter 中设置 <code>slug</code> 来影响 URL，您需要在 <code>_config.yml</code> 文件中的 <code>permalink</code> 配置中包含 <code>:slug</code> 参数。例如：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">permalink:</span> <span class="hljs-string">:year/:month/:day/:slug/</span><br></code></pre></td></tr></table></figure><p>这样配置后，您就可以在文章的 front matter 中通过 <code>slug</code> 字段来定义该文章的 URL 的一部分了。</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>假设有以下文章 front matter 配置：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">我的文章</span><br><span class="hljs-attr">slug:</span> <span class="hljs-string">my-article</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2023-03-15</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure><p>并且 <code>_config.yml</code> 中的 <code>permalink</code> 设置为 <code>:year/:month/:day/:slug/</code>，那么这篇文章的 URL 将会是 <code>http://your-blog-domain.com/2023/03/15/my-article/</code>。</p><p>您遇到的情况是由于在 Hexo 中，文章的 URL 是根据 <code>permalink</code> 设置和文章 front matter 中的信息（如 <code>date</code> 和 <code>title</code> 或 <code>slug</code>）生成的。当您更改文章的标题，URL 也会相应变化。而且，如果您在文章 front matter 中没有显式设置 <code>date</code> 字段，Hexo 默认使用文件的创建日期或最后修改日期作为文章日期。</p><p>根据您的描述，您希望将文章的 URL 改回原来的形式，但遇到了因日期改变而导致的问题。要解决这个问题，请按照以下步骤操作：</p><h3 id="1-明确设置文章日期"><a href="#1-明确设置文章日期" class="headerlink" title="1. 明确设置文章日期"></a>1. 明确设置文章日期</h3><p>在文章的 front matter 中显式设置 <code>date</code> 字段为您希望的日期。例如：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">title1</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2023-12-26</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure><p>即使今天是 2023-12-27，只要在 front matter 中指定了日期，Hexo 就会使用这个日期生成 URL。</p><h3 id="2-调整-permalink-设置"><a href="#2-调整-permalink-设置" class="headerlink" title="2. 调整 permalink 设置"></a>2. 调整 <code>permalink</code> 设置</h3><p>确保 <code>_config.yml</code> 中的 <code>permalink</code> 设置符合您的需求。例如：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">permalink:</span> <span class="hljs-string">:year/:month/:day/:title/</span><br></code></pre></td></tr></table></figure><p>这样配置后，URL 将基于 front matter 中的 <code>date</code> 和 <code>title</code> 字段生成。</p><h3 id="3-重新生成站点"><a href="#3-重新生成站点" class="headerlink" title="3. 重新生成站点"></a>3. 重新生成站点</h3><p>修改文章并保存后，重新生成您的站点：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean<br>hexo generate<br></code></pre></td></tr></table></figure><h3 id="4-注意事项"><a href="#4-注意事项" class="headerlink" title="4. 注意事项"></a>4. 注意事项</h3><ul><li>如果您在不同天对同一篇文章进行了编辑，而且希望保持原有的 URL 不变，最好在文章的 front matter 中显式指定 <code>date</code> 字段。</li><li>在更改标题时，请记住 URL 也会随之改变。如果您希望 URL 保持不变，可以考虑使用 <code>slug</code> 字段，这样即使标题变化，URL 也可以保持一致。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>汤姆·李-一位成功预测2023年股市繁荣的投资者分享2024年股市看法-枫叶洞见-EP05</title>
     <link href="/2023/12/27/Tom%20Lee,%20Who%20Nailed%202023%20Stock%20Market%20Rally,%20Shares%20His%202024%20Market%20Outlook-Just%20In%20Vent-EP05/"/>
     <url>/2023/12/27/Tom%20Lee,%20Who%20Nailed%202023%20Stock%20Market%20Rally,%20Shares%20His%202024%20Market%20Outlook-Just%20In%20Vent-EP05/</url>
@@ -199,31 +224,6 @@
   
   
   <entry>
-    <title>风下之乡</title>
-    <link href="/2023/12/25/wind/"/>
-    <url>/2023/12/25/wind/</url>
-    
-    <content type="html"><![CDATA[<p>我喜欢婆罗洲那些黑黢黢的夜晚。空气中弥漫着树芽和湿漉漉的树叶的气味，仅有的声音是来自于青蛙的呱噪和夜鹰的咕咕，唯一的陪伴来自我们自己，仅有的只言片语也我们自己的。 我喜欢那些独自在家的安静日子，那些懒散、无所事事、不值一提的日子。只有时间和孤独，才能让人认识到自己的存在。这些，是我们在婆罗洲所拥有的。</p><p>我也喜欢那些丛林中的旅行，认识了那些我一直想要认识的事物— 阴云惨淡，如地狱般的尼泊湿地；模糊暧昧的绿色河流，美丽刺激的险滩；阳光照射下，色泽醇厚的裸露的脊背。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>读书笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Non Fiction</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>从零开始打造更强的私有GPT大模型- RAG教程01</title>
     <link href="/2023/12/25/rag-101/"/>
     <url>/2023/12/25/rag-101/</url>
@@ -247,6 +247,31 @@
       <tag>vector embeedings</tag>
       
       <tag>Llama Index</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>风下之乡</title>
+    <link href="/2023/12/25/wind/"/>
+    <url>/2023/12/25/wind/</url>
+    
+    <content type="html"><![CDATA[<p>我喜欢婆罗洲那些黑黢黢的夜晚。空气中弥漫着树芽和湿漉漉的树叶的气味，仅有的声音是来自于青蛙的呱噪和夜鹰的咕咕，唯一的陪伴来自我们自己，仅有的只言片语也我们自己的。 我喜欢那些独自在家的安静日子，那些懒散、无所事事、不值一提的日子。只有时间和孤独，才能让人认识到自己的存在。这些，是我们在婆罗洲所拥有的。</p><p>我也喜欢那些丛林中的旅行，认识了那些我一直想要认识的事物— 阴云惨淡，如地狱般的尼泊湿地；模糊暧昧的绿色河流，美丽刺激的险滩；阳光照射下，色泽醇厚的裸露的脊背。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>读书笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Non Fiction</tag>
       
     </tags>
     
