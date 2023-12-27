@@ -1,9 +1,9 @@
 ---
 title: Hexo 版本升级
-categories: Hexo
+categories: hexo
 date: 2023-12-25
-tags: 
-    - hexo
+tags:
+    - hexo 
 ---
 ### 
 - 以下指令均在Hexo目录下操作，先定位到Hexo目录  
