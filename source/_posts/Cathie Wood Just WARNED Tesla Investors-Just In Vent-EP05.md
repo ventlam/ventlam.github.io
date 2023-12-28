@@ -1,5 +1,5 @@
 ---
-title: 凯西·伍德刚刚向特斯拉投资者发出警告-枫叶洞见EP05
+title: 凯西·伍德刚刚向特斯拉投资者发出警告-枫叶洞见EP06
 categories: Investment
 date: 2023-12-28
 tags:
@@ -8,14 +8,14 @@ tags:
 ---
 
 
-[Cathie Wood Just WARNED Tesla Investors](https://www.youtube.com/watch?v=mC-shura-34)
+
 
 ![](https://s.draftai.cn/vent/202312281443292.png)
 
-### Summary
+### 摘要
 Cathie Wood在YouTube上警告了特斯拉的投资者，她认为特斯拉的估值取决于电动车和自动驾驶出租车平台的发展，同时也提到了特斯拉的财务状况和经营风险。
 
-### Highlights
+### 核心观点
 - [🚗] 特斯拉的估值取决于电动车和自动驾驶出租车平台的发展
 - [📉] 特斯拉的毛利率下降引起了投资者的担忧
 - [💰] 特斯拉在研发上花费巨大，对盈利造成影响
@@ -45,6 +45,8 @@ Cathie Wood在YouTube上警告了特斯拉的投资者，她认为特斯拉的�
 ![](https://s.draftai.cn/vent/202312281447681.png)
 
 ### 原文
+
+[Cathie Wood Just WARNED Tesla Investors](https://www.youtube.com/watch?v=mC-shura-34)
 
 让我们请来ARK投资公司首席执行官凯西·伍德。在ARK创新ETF中,特斯拉是她持有量最大的股票。凯西,很高兴在Fast上与您见面。
 
