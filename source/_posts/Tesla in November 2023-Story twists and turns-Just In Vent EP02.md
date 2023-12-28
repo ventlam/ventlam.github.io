@@ -1,6 +1,7 @@
 ---
 title: "特斯拉的故事波折与重新估值-2023年11月-枫叶洞见EP02"
-categories: Tech News
+categories: Investment
+date: 2023-12-26
 tags:
     - Tesla
 ---
