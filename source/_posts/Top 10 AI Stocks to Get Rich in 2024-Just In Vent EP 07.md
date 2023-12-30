@@ -1,5 +1,5 @@
 ---
-title: 美股2024年必赚的10只好股🔥(Top 10 AI Stocks to Get Rich in 2024)-Just In Vent-EP07
+title: 美股2024年必赚的10只好股🔥(Top 10 AI Stocks to Get Rich in 2024)-枫叶洞见EP07
 categories: Investment
 date: 2023-12-29
 tags:
@@ -13,6 +13,7 @@ tags:
 ![Top 10 Stocks to Get Rich in 2024 .jpg](https://s.draftai.cn/vent/Top%2010%20Stocks%20to%20Get%20Rich%20in%202024%20.jpg)
 
 ### 开篇的话
+**Top 10 AI Stocks to Get Rich in 2024**
 来自Alex 的推荐，关键是他对股票的分析背后的逻辑。不代表任何投资建议！以下是这十只股票。
 
 | 股票代码 | 公司名 | 市值(美元) |    净利润率(GAAP美国会计标准) |
