@@ -9,7 +9,7 @@ tags:
 #### 帝国前哨
 > 山打根码头躺在我脚下。清晨，湾里的水一动不动，平坦湛蓝，像明信片上的图画。唐人街的屋顶在阳光下红得耀眼，海岸边长满树的悬崖又是那样的绿，更远处的丛林是一片更深、更暗的绿。海岸线上的椰子树小心翼翼地进入视野。分散在海里的蘑菇岛，那么小，那么完美，我似乎可以直接抓一个直接寄回家，标注为“来自婆罗洲的问候”
 
-![vent1924_calm_blue_waters_of_the_bay_resembling_a_postcard_pict_568d6373-8dce-441d-880c-539e4c95a3ff.png](https://s.draftai.cn/vent/vent1924_calm_blue_waters_of_the_bay_resembling_a_postcard_pict_568d6373-8dce-441d-880c-539e4c95a3ff.png)
+![blue_waters_of_the_bay](https://s.draftai.cn/vent/vent1924_calm_blue_waters_of_the_bay_resembling_a_postcard_pict_568d6373-8dce-441d-880c-539e4c95a3ff.png)
 
 风下之乡：沙巴(Sabah)，是马来西亚(Malaysia)的第二大州，位于世界第三大岛婆罗洲的北端，以前被称为北婆罗洲(North Borneo)。西临南中国海，东濒苏禄海，面积74,500平方公里,海岸线长达1,440公里。
 沙巴素有风下之乡(Land Below The Wind)的浪漫美誉，原因是沙巴位于台风带下面, 不受台风和其他天灾(如地震、海啸)的袭击影响。自然风光，有离岛软细的沙滩，蓝天碧海，沿山登径，有保存得最美好的森林。
@@ -17,7 +17,7 @@ tags:
 > 皇家苏禄染布挂在门上，明黄色、樱桃色和紫色，被风一刮，融入花园的缤纷中，吸满了那儿的颜色，再被刮进来，好像呼吸急促，令人兴奋。花园里，金雨树成串的黄花，九重葛的粉红和金棕，非洲郁金香的红唇，凤凰木花瓣的火红，鸡蛋花神秘而难以捕捉的香气，克南加柚木以及金露花，让我目不暇接。这个花园是我们唯一的装饰品，只有它能够不惧蚊蝇恶虫，不惧恶日暴雨，热情生长。
 
 
-![vent1924_A_vibrant_garden_scene_with_a_royal_Sulu_dyed_cloth_ha_76ee4987-0ae1-4dd6-a051-2d02ba351ff4.png](https://s.draftai.cn/vent/vent1924_A_vibrant_garden_scene_with_a_royal_Sulu_dyed_cloth_ha_76ee4987-0ae1-4dd6-a051-2d02ba351ff4.png)
+![vibrant_garden](https://s.draftai.cn/vent/vent1924_A_vibrant_garden_scene_with_a_royal_Sulu_dyed_cloth_ha_76ee4987-0ae1-4dd6-a051-2d02ba351ff4.png)
 
 美的普世性，如此浓烈和肆意，谁又能不被征服呢？
 
@@ -28,7 +28,7 @@ tags:
 
 > 最后，只剩下夜色的蔚蓝包围在我们身边。黄色的哈密瓜一样的月亮栖息在伽雅岛的尽头，在它下面，是睡得着了的海水溅起的一带金黄，天空很近很深，星星肆无忌惮地在远处闪烁，它们映在水里，使得海面泛起微光。这半透明的化身海，此刻依然是珊瑚滩上一片夺目的蔚蓝。无眠的鱼群整夜忙碌着，被躺在甲板上的我们瞧见。
 
-![vent1924_A_mesmerizing_night_scene_on_the_sea._The_sky_is_a_dee_28436b56-75b9-4446-a16c-4431588074f4.png](https://s.draftai.cn/vent/vent1924_A_mesmerizing_night_scene_on_the_sea._The_sky_is_a_dee_28436b56-75b9-4446-a16c-4431588074f4.png)
+![vmesmerizing_night](https://s.draftai.cn/vent/vent1924_A_mesmerizing_night_scene_on_the_sea._The_sky_is_a_dee_28436b56-75b9-4446-a16c-4431588074f4.png)
 
 
 
@@ -74,7 +74,7 @@ tags:
 > 一眼还一眼，一牙还一牙，这是所有土著人都明白的规矩，但伴随着这个故事的传诵，似乎向迷思中的土著人证明了一件事，白人的规矩不是一眼还一眼，一牙还一牙。他们在1890年那个下雨的早上，在裴干河上的长屋，带走了一百双眼睛和一百颗牙。
 
 
-![image.png](https://s.draftai.cn/vent/20240104011505.png)
+![](https://s.draftai.cn/vent/20240104011505.png)
 
 
 
