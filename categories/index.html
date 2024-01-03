@@ -58,7 +58,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":"G-9LK9HJF9L5"},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":"G-9LK9HJF9L5"},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -68,6 +68,33 @@
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
   
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=G-9LK9HJF9L5", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-9LK9HJF9L5');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
   
@@ -226,111 +253,6 @@
     
     <div class="category row nomargin-x">
       <a class="category-item collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="AI"
-        id="heading-0a40e3c91a3a55c9a37428c6d194d0e5" role="tab" data-toggle="collapse" href="#collapse-0a40e3c91a3a55c9a37428c6d194d0e5"
-        aria-expanded="false"
-      >
-        AI
-        <span class="list-group-count"></span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-        <a href="/categories/AI/" class="category-count col-2 col-md-1 col-xm-1">
-          <i class="iconfont icon-articles"></i>
-          <span>8</span>
-        </a>
-      
-      <div class="category-collapse collapse " id="collapse-0a40e3c91a3a55c9a37428c6d194d0e5"
-           role="tabpanel" aria-labelledby="heading-0a40e3c91a3a55c9a37428c6d194d0e5">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/2023/12/25/rag-101/" title="从零开始打造更强的私有GPT大模型- RAG教程01"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">从零开始打造更强的私有GPT大模型- RAG教程01</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/12/18/Introduction%20to%20Image%20Search%20System%20Using%20Pinecone%20and%20OpenAI:%20A%20Tutorial/" title="基于Pinecone和OpenAI的图像搜索系统入门教程"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">基于Pinecone和OpenAI的图像搜索系统入门教程</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/12/18/Large%20Language%20Model%20Deployment%20Application%20and%20Infrastructure%20Cost%20Optimization-E08-Week31%202023/" title="大语言模型部署应用与基础设施成本优化--风爷推荐-E08-Week31 2023"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">大语言模型部署应用与基础设施成本优化--风爷推荐-E08-Week31 2023</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/12/18/Prompt%20Engineering%20:%20Tree%20of%20Thoughts-E07-Week24%202023/" title="Prompt 工程进阶之Tree of Thoughts--风爷推荐-E07-Week24 2023"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Prompt 工程进阶之Tree of Thoughts--风爷推荐-E07-Week24 2023</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/12/18/Vector%20Database%20Tutorial%20Series%20-%202%20-%20Building%20an%20Image%20Search%20Engine%20with%20Milvus/" title="向量数据库入门教程系列-2-基于milvus实现图片搜索引擎"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">向量数据库入门教程系列-2-基于milvus实现图片搜索引擎</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/12/18/Vector%20Database%20Tutorial%20Series%20-%201%20-%20Implementing%20Semantic%20Search%20with%20Pinecone/" title="向量数据库入门教程系列-1-基于pinecone实现语义搜索"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">向量数据库入门教程系列-1-基于pinecone实现语义搜索</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/12/18/Natural%20Language-Based%20Data%20Analysis%20Tool-E05-Week15%202023/" title="基于自然语言的数据分析神器来了-风爷推荐-E05-Week15 2023"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">基于自然语言的数据分析神器来了-风爷推荐-E05-Week15 2023</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/12/18/The%20Wave%20of%20AIGC/" title="AIGC浪潮"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">AIGC浪潮</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category row nomargin-x">
-      <a class="category-item collapsed
           list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Investment"
         id="heading-b7380bf31920c1bb03ff97198a95bde8" role="tab" data-toggle="collapse" href="#collapse-b7380bf31920c1bb03ff97198a95bde8"
         aria-expanded="false"
@@ -342,7 +264,7 @@
       
         <a href="/categories/Investment/" class="category-count col-2 col-md-1 col-xm-1">
           <i class="iconfont icon-articles"></i>
-          <span>7</span>
+          <span>11</span>
         </a>
       
       <div class="category-collapse collapse " id="collapse-b7380bf31920c1bb03ff97198a95bde8"
@@ -352,6 +274,42 @@
           
   <div class="category-post-list">
     
+    
+      
+      
+        <a href="/2024/01/03/The%20Only%20Study%20Guide%20You%20Need%20In%202024%20To%20Become%20A%20Profitable%20Trader-Just%20In%20Vent%20EP10/" title="想在股市赚钱，2024年你只需要看懂这些！-枫叶洞见EP10"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">想在股市赚钱，2024年你只需要看懂这些！-枫叶洞见EP10</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2024/01/02/Coin%20Bureau%202024%20CRYPTO%20Predictions-Our%20Top%2010!!-Just%20In%20Vent%20EP09/" title="Coin Bureau提出了2024年加密货币的10大预测-枫叶洞见EP09"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Coin Bureau提出了2024年加密货币的10大预测-枫叶洞见EP09</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2023/12/31/Cathie%20Wood%20on%20Bitcoin%20Holdings,%20Tesla,%20AI,%202024%20Outlook-Just%20In%20Vent%20EP08/" title="木头姐关于比特币、特斯拉、AI的2024年展望-枫叶洞见EP08"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">木头姐关于比特币、特斯拉、AI的2024年展望-枫叶洞见EP08</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2023/12/29/Top%2010%20AI%20Stocks%20to%20Get%20Rich%20in%202024-Just%20In%20Vent%20EP%2007/" title="美股2024年必赚的10只好股🔥(Top 10 AI Stocks to Get Rich in 2024)-枫叶洞见EP07"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">美股2024年必赚的10只好股🔥(Top 10 AI Stocks to Get Rich in 2024)-枫叶洞见EP07</span>
+        </a>
+      
     
       
       
@@ -409,10 +367,121 @@
     
       
       
-        <a href="/2023/12/25/Epic%20Games%20vs%20Google%20-ARK%20Brainstorm-Just%20In%20Vent%20EP01/" title="Epic Games起诉Google -ARK Brainstorm -枫叶洞见EP01"
+        <a href="/categories/Investment/" class="list-group-item list-group-item-action">
+          <span class="category-post">More...</span>
+        </a>
+        
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="AI"
+        id="heading-0a40e3c91a3a55c9a37428c6d194d0e5" role="tab" data-toggle="collapse" href="#collapse-0a40e3c91a3a55c9a37428c6d194d0e5"
+        aria-expanded="false"
+      >
+        AI
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/AI/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>9</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-0a40e3c91a3a55c9a37428c6d194d0e5"
+           role="tabpanel" aria-labelledby="heading-0a40e3c91a3a55c9a37428c6d194d0e5">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2024/01/01/Meta%20AI%202023%20best%2010%20job%20and%20vent&#39;s%20comment/" title="Meta AI实验室2023年最重要的10个工作兼风爷快评"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">Epic Games起诉Google -ARK Brainstorm -枫叶洞见EP01</span>
+          <span class="category-post">Meta AI实验室2023年最重要的10个工作兼风爷快评</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2023/12/25/rag-101/" title="从零开始打造更强的私有GPT大模型- RAG教程01"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">从零开始打造更强的私有GPT大模型- RAG教程01</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2023/12/18/Introduction%20to%20Image%20Search%20System%20Using%20Pinecone%20and%20OpenAI:%20A%20Tutorial/" title="基于Pinecone和OpenAI的图像搜索系统入门教程"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">基于Pinecone和OpenAI的图像搜索系统入门教程</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2023/12/18/Large%20Language%20Model%20Deployment%20Application%20and%20Infrastructure%20Cost%20Optimization-E08-Week31%202023/" title="大语言模型部署应用与基础设施成本优化--风爷推荐-E08-Week31 2023"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">大语言模型部署应用与基础设施成本优化--风爷推荐-E08-Week31 2023</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2023/12/18/Prompt%20Engineering%20:%20Tree%20of%20Thoughts-E07-Week24%202023/" title="Prompt 工程进阶之Tree of Thoughts--风爷推荐-E07-Week24 2023"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Prompt 工程进阶之Tree of Thoughts--风爷推荐-E07-Week24 2023</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2023/12/18/Vector%20Database%20Tutorial%20Series%20-%201%20-%20Implementing%20Semantic%20Search%20with%20Pinecone/" title="向量数据库入门教程系列-1-基于pinecone实现语义搜索"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">向量数据库入门教程系列-1-基于pinecone实现语义搜索</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2023/12/18/Vector%20Database%20Tutorial%20Series%20-%202%20-%20Building%20an%20Image%20Search%20Engine%20with%20Milvus/" title="向量数据库入门教程系列-2-基于milvus实现图片搜索引擎"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">向量数据库入门教程系列-2-基于milvus实现图片搜索引擎</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2023/12/18/Natural%20Language-Based%20Data%20Analysis%20Tool-E05-Week15%202023/" title="基于自然语言的数据分析神器来了-风爷推荐-E05-Week15 2023"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">基于自然语言的数据分析神器来了-风爷推荐-E05-Week15 2023</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2023/12/18/The%20Wave%20of%20AIGC/" title="AIGC浪潮"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">AIGC浪潮</span>
         </a>
       
     
@@ -502,7 +571,7 @@
     
       
       
-        <a href="/2023/12/25/wind/" title="风下之乡"
+        <a href="/2024/01/03/Land%20Below%20The%20Wind/" title="风下之乡"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">风下之乡</span>

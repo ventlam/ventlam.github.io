@@ -1,0 +1,709 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.png">
+  <link rel="icon" href="/img/icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Vent Lam">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="开篇的话ChaGPT的诞生，成为人类的AGI元年，犹如按下了AI研究的快进键。2023短短一年，AI社区诞生了数之不尽的明星项目和璀璨的开源成绩。在OpenAI不再Open之际，开源社区一度陷入对AI巨头不可追赶的绝望，直到Meta平地一声雷，接连开源包括 SAM、Llama2等重磅开源产品，让社区快速跟上了对大模型最前沿工作的进展。风爷心目中，Meta地位迅速超赶谷歌成为，世界上最伟大的大企业之">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Meta AI实验室2023年最重要的10个工作兼风爷快评">
+<meta property="og:url" content="http://example.com/2024/01/01/Meta%20AI%202023%20best%2010%20job%20and%20vent's%20comment/index.html">
+<meta property="og:site_name" content="The way to freedom">
+<meta property="og:description" content="开篇的话ChaGPT的诞生，成为人类的AGI元年，犹如按下了AI研究的快进键。2023短短一年，AI社区诞生了数之不尽的明星项目和璀璨的开源成绩。在OpenAI不再Open之际，开源社区一度陷入对AI巨头不可追赶的绝望，直到Meta平地一声雷，接连开源包括 SAM、Llama2等重磅开源产品，让社区快速跟上了对大模型最前沿工作的进展。风爷心目中，Meta地位迅速超赶谷歌成为，世界上最伟大的大企业之">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s.draftai.cn/vent/20240101141917.png">
+<meta property="og:image" content="https://s.draftai.cn/vent/20240101142249.png">
+<meta property="og:image" content="https://s.draftai.cn/vent/20240101142427.png">
+<meta property="og:image" content="https://s.draftai.cn/vent/20240101162109.png">
+<meta property="og:image" content="https://s.draftai.cn/vent/20240101161926.png">
+<meta property="article:published_time" content="2023-12-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-02T02:20:57.659Z">
+<meta property="article:author" content="Vent Lam">
+<meta property="article:tag" content="ai">
+<meta property="article:tag" content="Meta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s.draftai.cn/vent/20240101141917.png">
+  
+  
+  
+  <title>Meta AI实验室2023年最重要的10个工作兼风爷快评 - The way to freedom</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":"G-9LK9HJF9L5"},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=G-9LK9HJF9L5", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-9LK9HJF9L5');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="The way to freedom" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>The Way To Freedom</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://s.draftai.cn/vent/beach.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Meta AI实验室2023年最重要的10个工作兼风爷快评"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-01-01 00:00" pubdate>
+          January 1, 2024 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          975 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          10 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Meta AI实验室2023年最重要的10个工作兼风爷快评</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="开篇的话"><a href="#开篇的话" class="headerlink" title="开篇的话"></a>开篇的话</h2><p>ChaGPT的诞生，成为人类的AGI元年，犹如按下了AI研究的快进键。2023短短一年，AI社区诞生了数之不尽的明星项目和璀璨的开源成绩。在OpenAI不再Open之际，开源社区一度陷入对AI巨头不可追赶的绝望，直到Meta平地一声雷，接连开源包括 SAM、Llama2等重磅开源产品，让社区快速跟上了对大模型最前沿工作的进展。<br>风爷心目中，Meta地位迅速超赶谷歌成为，世界上最伟大的大企业之一。</p>
+<h2 id="Meta-AI-2023年度十佳"><a href="#Meta-AI-2023年度十佳" class="headerlink" title="Meta AI 2023年度十佳"></a>Meta AI 2023年度十佳</h2><p>接下来是 Meta自己选的：</p>
+<p>在 2023 年的尾声，我们为您呈现了今年我们分享的十大最令人瞩目的人工智能研究成果，每一项都开辟了探索新天地的大门。</p>
+<p>   1️⃣ Segment Anything (SAM)<br>   这是通往图像分割领域首个全面模型的重要一跃。<br>   探索细节：<a target="_blank" rel="noopener" href="http://bit.ly/3tyeJKu">bit.ly&#x2F;3tyeJKu</a><br>   <img src="https://s.draftai.cn/vent/20240101141917.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<blockquote>
+<p>SAM 确实非常强大，文章一发布，基于它的应用和改造，数之不尽，风起云涌。大幅推进了CV在分割领域的进展。</p>
+</blockquote>
+<p>   2️⃣ DINOv2<br>   利用自我监督学习训练计算机视觉模型的首创方法，其成就匹配甚至超越了业界标准。<br>   探索细节：<a target="_blank" rel="noopener" href="http://bit.ly/3TGTEIb">bit.ly&#x2F;3TGTEIb</a><br>   <img src="https://s.draftai.cn/vent/20240101142249.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<blockquote>
+<p>和SAM不同的是DinoV2实际上是真正意义的CV大模型，旨在覆盖所有CV子领域的下游任务。文章还是比较谦虚，是非常重要的工作</p>
+</blockquote>
+<p>   3️⃣ Llama 2<br>   我们最新一代的开源大型语言模型，为研究和商业应用提供免费使用的新选择。<br>   探索细节：<a target="_blank" rel="noopener" href="http://bit.ly/3RY66C6">bit.ly&#x2F;3RY66C6</a><br>   <img src="https://s.draftai.cn/vent/20240101142427.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<blockquote>
+<p>Llama 2 的开源，让国产大模型的自主研发成为可能。赶英超美不是梦。在ClosedAI的大模型下溃不成军的开源大模型，正式走上了AI安全的道路。</p>
+</blockquote>
+<p>   4️⃣ Emu Video &amp; Emu Edit<br>   在文本到视频生成和文本指令控制的图像编辑方面的创新 AI 研究，推动生成性技术的质量新高。<br>   探索细节：<a target="_blank" rel="noopener" href="http://bit.ly/3RZVZwU">bit.ly&#x2F;3RZVZwU</a></p>
+<p>   5️⃣ I-JEPA<br>   一种自我监督的计算机视觉模型，它通过预测来学习理解世界，是 杨立昆老师 愿景中的一部分，旨在使 AI 如同动物和人类一样学习和推理。<br>   探索细节：<a target="_blank" rel="noopener" href="http://bit.ly/3TA9oNk">bit.ly&#x2F;3TA9oNk</a><br>   6️⃣ Audiobox<br>   我们在音频生成领域的全新基础研究模型，为音频魔法的未来奠定了基础。<br>   探索细节：<a target="_blank" rel="noopener" href="http://bit.ly/47ib6pQ">bit.ly&#x2F;47ib6pQ</a></p>
+<p>   7️⃣ 脑解码 - 迈向实时重构视觉感知<br>   使用 MEG 技术，这个 AI 系统能够以史无前例的时间分辨率解码大脑中的视觉表征。<br>   探索细节：<a target="_blank" rel="noopener" href="http://bit.ly/3vpgDNR">bit.ly&#x2F;3vpgDNR</a><br>   8️⃣ 开放催化剂演示<br>   这项服务为材料科学研究者提供了一个新平台，使他们能够快速模拟催化材料的反应性，超越现有计算方法。<br>   探索细节：<a target="_blank" rel="noopener" href="http://bit.ly/3vphiij">bit.ly&#x2F;3vphiij</a><br>   9️⃣ 无缝通信<br>   这一新型 AI 翻译模型系列，提供准确保真和近乎实时的流式翻译服务。<br>   探索细节：<a target="_blank" rel="noopener" href="http://bit.ly/3toBDE8">bit.ly&#x2F;3toBDE8</a></p>
+<blockquote>
+<p>很强大TTS&#x2F;ASR开源，没仔细测，这个领域也有效逼迫OpenAI对Whisper的开源和改进。</p>
+</blockquote>
+<p><img src="https://s.draftai.cn/vent/20240101162109.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>   🔟 ImageBind<br>   这是首个能同时处理六种模式数据的 AI 模型，它的出现使机器更接近于人类综合多感官信息的能力。<br>   探索细节：<a target="_blank" rel="noopener" href="http://bit.ly/3NLUaBc">bit.ly&#x2F;3NLUaBc</a>“</p>
+<blockquote>
+<p>为多模态模型打开了一条不错的思路，但是对齐方法有点勉强。但是确实为社区的多模态模型实现了对GPT的短暂“领先”。（它的出现催生了类似于LLaVa的多模态模型，出生在GPT4-V之前。）可以看到这是多么疯狂的一年，数之不尽的模型进展，如长江只浪，延绵不绝。</p>
+</blockquote>
+<p><img src="https://s.draftai.cn/vent/20240101161926.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/AI/" class="category-chain-item">AI</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/ai/" class="print-no-link">#ai</a>
+      
+        <a href="/tags/Meta/" class="print-no-link">#Meta</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Meta AI实验室2023年最重要的10个工作兼风爷快评</div>
+      <div>http://example.com/2024/01/01/Meta AI 2023 best 10 job and vent&#39;s comment/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Vent Lam</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>January 1, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/01/02/Coin%20Bureau%202024%20CRYPTO%20Predictions-Our%20Top%2010!!-Just%20In%20Vent%20EP09/" title="Coin Bureau提出了2024年加密货币的10大预测-枫叶洞见EP09">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Coin Bureau提出了2024年加密货币的10大预测-枫叶洞见EP09</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/12/31/Cathie%20Wood%20on%20Bitcoin%20Holdings,%20Tesla,%20AI,%202024%20Outlook-Just%20In%20Vent%20EP08/" title="木头姐关于比特币、特斯拉、AI的2024年展望-枫叶洞见EP08">
+                        <span class="hidden-mobile">木头姐关于比特币、特斯拉、AI的2024年展望-枫叶洞见EP08</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
