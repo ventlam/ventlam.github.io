@@ -1,10 +1,10 @@
-#TODO  要删掉的
-- https://s.alidraft.com/privacy.html
-- https://s.alidraft.com/terms.html
-- Refund Policy need to edit.
-- Acceptable Use Policy need to edit.
-
-----
+---
+title: ChatOnce Tos
+categories: todo
+date: 2024-01-06
+tags:
+  - ChatOnce
+---
 
 _Last updated: Jan 5, 2024_
 
