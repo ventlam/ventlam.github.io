@@ -93,7 +93,7 @@ By Subscribing, you consent to receiving email communications from ChatOnce abou
 
 You agree that we may communicate with you electronically about any important information regarding your Subscription. We may also provide notices to you by posting them on our website or by sending them to an email address that you previously provided to us. Website and email notices will be considered received by you within 24 hours of the time posted or sent.
 
-Unless stated otherwise, you must send notices to us relating to these Subscriber Terms to: [_feedback@draftai.ai_](mailto:feedback@draftai.ai).
+Unless stated otherwise, you must send notices to us relating to these Subscriber Terms to: feedback@draftai.ai.
 
 **4. DISCLAIMERS AND LIMITATION OF LIABILITY.**
 
@@ -119,6 +119,6 @@ We may modify these Subscriber Terms, including the [Terms of Service](https://
 
 **Contact Us.**
 
-If you have any questions about Subscriptions, you can reach us at [feedback@draftai.ai](mailto:feedback@draftai.ai) .
+If you have any questions about Subscriptions, you can reach us at feedback@draftai.ai.
 
 _v.20240105_
