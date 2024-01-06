@@ -3,7 +3,6 @@
 - https://s.alidraft.com/terms.html
 - Refund Policy need to edit.
 - Acceptable Use Policy need to edit.
-- [_legal@quora.com_](mailto:legal@quora.com). legal@draftai.ai
 
 ----
 
