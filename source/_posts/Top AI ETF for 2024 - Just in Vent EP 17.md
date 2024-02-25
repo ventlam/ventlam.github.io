@@ -1,5 +1,5 @@
 ---
-title: 顶级AI ETF推荐 :未来十年最好的投资-枫叶洞见EP17
+title: 未来十年最好的投资-顶级AI ETF-枫叶洞见EP17
 categories: Investment
 date: 2024-02-25
 tags:
