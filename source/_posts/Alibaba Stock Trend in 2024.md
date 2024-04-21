@@ -1,5 +1,5 @@
 ---
-title: 2024年阿里巴巴技术面分析(截止到4月21号)
+title: 阿里巴巴技术面分析(截止到2024年4月21号)
 categories: Investment
 date: 2024-04-21
 tags:
