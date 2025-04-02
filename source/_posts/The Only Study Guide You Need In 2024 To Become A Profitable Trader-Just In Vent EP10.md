@@ -5,8 +5,8 @@ date: 2024-01-03
 tags:
   - Trader
 ---
-
 ![](https://s.draftai.cn/vent/trend_investing.png)
+
 ### 开篇的话
 
 Steven Hart是资深交易员兼教练，他的[频道](https://www.youtube.com/@thetradingchannel)主要分享各种交易策略的教程和技巧，包括趋势跟踪和技术分析。频道有238万订阅会员，内容比较扎实、易懂。

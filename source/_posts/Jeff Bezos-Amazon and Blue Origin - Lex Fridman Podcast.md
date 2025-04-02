@@ -1,13 +1,7 @@
----
-title: "关于亚马逊和蓝色起源 — 亚马逊创始人Jeff Bezos访谈 - 2023年12月15"
-categories: Investment
-tags:
-    - amazon
-    - blue origin
----
+#blog
+# 关于亚马逊和蓝色起源 — 亚马逊创始人Jeff Bezos访谈 - 2023年12月15
 
-
-[访问地址](https://www.youtube.com/watch?v=DcWqzZ3I2cY&ab_channel=LexFridman)
+[访问地址，需要🪜，或者在小宇宙等播客平台搜索Lex Fridman](https://www.youtube.com/watch?v=DcWqzZ3I2cY&ab_channel=LexFridman "访问地址，需要🪜，或者在小宇宙等播客平台搜索Lex Fridman")
 
 Lex Fridman是一位主持人和研究人工智能和机器学习的专家。他主持着Lex Fridman Podcast，并在Instagram上分享关于机器人和人类的照片和视频。
 Lex Fridman对人工智能和机器学习有着浓厚的兴趣，并在他的节目中与各种领域的专家进行访谈，包括马斯克、贝索斯、老黄等。他在Instagram上有超过1.1百万的粉丝，并且他的帖子数量已经超过749个。
