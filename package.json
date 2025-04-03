@@ -6,9 +6,7 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server",
-    "watch": "node scripts/watch_and_copy.js",
-    "deploy:all": "node scripts/deploy.js"
+    "server": "hexo server"
   },
   "hexo": {
     "version": "7.0.0"
@@ -28,7 +26,6 @@
     "hexo-renderer-stylus": "^3.0.0",
     "hexo-server": "^3.0.0",
     "hexo-theme-fluid": "^1.9.7",
-    "hexo-theme-landscape": "^1.0.0",
-    "chokidar": "^3.5.3"
+    "hexo-theme-landscape": "^1.0.0"
   }
 }
