@@ -1,4 +1,12 @@
-#Tesla 
+---
+title: tesla and AI 
+categories: Investment
+date: 2024-01-13
+tags:
+  - ai
+  - tesla
+---
+
 ### Summary
 这是一场关于特斯拉、人工智能和金融市场的讨论，Elon Musk和Cathie Wood分享了他们对特斯拉、公共市场和AI的看法。他们还讨论了金融市场的问题和未来的发展方向。
 
