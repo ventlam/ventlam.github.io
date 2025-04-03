@@ -1,23 +1,19 @@
 ---
-title: 【译】GPU 云集群 评级系统 ｜ 如何租用 GPU 90%+覆盖率通过租用 GPU 价值、GPU 云评估指南、GPU 定价更新、GPU 泡沫破裂、CoreWeave IPO、超大规模计算、AI 新云经济学、新云内部收益率
-source: https://semianalysis.com/2025/03/26/the-gpu-cloud-clustermax-rating-system-how-to-rent-gpus/#demand-debates-%e2%80%93-will-reasoning-and-multimodal-save-the-gpu-rental-market
+title: 【译】GPU 云集群 评级系统 ｜ AI新云经济学
 author:
   - "[[SemiAnalysis]]"
 published: 2025-03-26
 created: 2025-04-03
-description: The ClusterMAX™ Rating System and content within this article were prepared independently by SemiAnalysis. No part of SemiAnalysis’s compensation by our clients was, is, or will be directly or indirectly related to the specific tiering, ratings or comments expressed. Introduction The exuberance in the GPU rental market has cooled off. We predicted this in our…
 tags:
-  - clippings
+  - GPU
+  - NVDA
+  - CoreWeave
 ---
-## 90%+ Coverage by Rental GPU Value, GPU Cloud Evaluation Guidelines, GPU Pricing Updates, GPU Bubble Burst, CoreWeave IPO, Hyperscalers, AI Neocloud Economics, Neocloud IRR
-
+ 
   
-GPU 云集群 MAX™评级系统 | 如何租用 GPU 90%+覆盖率通过租用 GPU 价值、GPU 云评估指南、GPU 定价更新、GPU 泡沫破裂、CoreWeave IPO、超大规模计算、AI 新云经济学、新云内部收益率
+## GPU 云集群 MAX™评级系统 | 如何租用 GPU 90%+覆盖率通过租用 GPU 价值、GPU 泡沫破裂、CoreWeave IPO、AI 新云经济学
 
-By , , , and  
 由迪伦·帕特尔、邓洪·陈、丹尼尔·尼什巴尔、伊万·恰姆和雷克·克努赫特森撰写
-- [LinkedIn](https://semianalysis.com/2025/03/26/the-gpu-cloud-clustermax-rating-system-how-to-rent-gpus/?share=linkedin&nb=1)
-- [X](https://semianalysis.com/2025/03/26/the-gpu-cloud-clustermax-rating-system-how-to-rent-gpus/?share=x&nb=1)
 
 ![](https://semianalysis.com/wp-content/uploads/2025/03/file_000000001dcc51f6900bfe241a0a01ea_conversation_id67e3bba7-e4a8-800d-a1c6-8b68859eb1d7message_id70400c72-4c38-472b-8262-06a8cef06f44.png)
 
